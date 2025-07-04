@@ -2,52 +2,45 @@
 #
 # Name:
 
-# INSTRUCTIONS:
+# NOTE: In the text below, backticks ``
+# are used to indicate code. For example, `library(tidyverse)`
+
+# Before doing anything else, load the packages you need for this assignment:
+# `tidyverse` and `nycflights13`
+
+# Q1. The `nycflights13` package includes a dataframe called `planes` that
+# contains data for each airplane such as manufacturer, model, etc.
 #
-# Any un-commented text you write must be valid R code. In other words, you
-# should be able to run this script without errors. Any other text (such as
-# answers to questions) should be commented. You must show the code that
-# you used to answer the question.
+# Join the `planes` dataframe to the `flights` dataframe, keeping all rows in
+# `flights`. Save the result as answer_1
 #
-# I show an example below:
+# HINT: the `tailnum` column uniquely identifies each airplane.
+
+# Q2. Use answer_1 to count the number of flights made by each manufacturer,
+# then sort the results so the manufacturer with the most flights is at the top.
+# Save the result as answer_2
 #
-# Example
+# HINT: use `count()`
+
+# Q3. Does every flight in the `flights` dataframe have a corresponding
+# airplane in `planes`?
 #
-# 0. What is the name of the package that includes flight data from airports
-#    in New York for 2013? Load the package.
+# Save your answer as a logical vector (either TRUE or FALSE) to answer_3
 
-# Answer: nycflights13
+# Q4. The `nycflights13` package includes a dataframe called `airlines` that
+# includes the name of each airline and its corresponding carrier code.
+# For example, the carrier code for American Airlines Inc. is AA.
+#
+# Join the `airlines` dataframe to the `flights` dataframe, keeping all rows in
+# `flights`. Save the result as answer_4
 
-# Code:
+# Q5. Use answer_4 to find the average arrival delay for each airline.
+# Exclude missing values from your calculation.
+# Save the result as answer_5
+#
+# HINT: remember that you can use `group_by()` and `summarize()` together to
+# calculate summary statistics for each group in the data.
+#
+# HINT: when you use functions like `mean()`, `max()`, or `min()`, use the
+# option `na.rm = TRUE` to exclude missing values from the calculation
 
-library(nycflights13)
-
-# 1. The `nycflights13` package includes a data frame called `planes` that
-#    contains data for each airplane. Using the `planes` and `flights` data
-#    frames, identify the top two manufacturers of the airplanes that had the
-#    most flights.
-
-# Answer
-# Top two manufacturers:
-
-# Code:
-
-
-
-
-# 2. Does every departing flight have corresponding weather data for that hour?
-#    HINT: use a filtering join to check.
-
-# Answer: yes or no
-
-# Code
-
-
-
-
-# 3. What was the wind-speed at the originating airport for the flight with the
-#    biggest departure delay?
-
-# Answer:
-
-# Code
